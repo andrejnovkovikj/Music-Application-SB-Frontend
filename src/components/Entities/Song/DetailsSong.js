@@ -27,12 +27,6 @@ const DetailsSong = ({ isAuthenticated, currentUser }) => {
                     return;
                 }
 
-                const response = await axios.get(
-                    `https://music-application-sb.onrender.com/api/users/${currentUser.username}/liked-songs`,
-                    { withCredentials: true }
-                );
-                setLiked(response.data.some((likedSong) => likedSong.id === songData.id));
-
                 const playlistsResponse = await playlistService.getPlaylistsByUserId(currentUser.username);
                 setPlaylists(playlistsResponse);
 
@@ -53,23 +47,6 @@ const DetailsSong = ({ isAuthenticated, currentUser }) => {
         fetchSongData();
     }, [id, isAuthenticated, currentUser]);
 
-    const handleLike = async () => {
-        try {
-            await songService.likeSong(id);
-            setLiked(true);
-        } catch (error) {
-            console.error("Error liking the song", error);
-        }
-    };
-
-    const handleUnlike = async () => {
-        try {
-            await songService.unlikeSong(id);
-            setLiked(false);
-        } catch (error) {
-            console.error("Error unliking the song", error);
-        }
-    };
 
     const handleAddToPlaylist = async () => {
         if (!selectedPlaylist || songInPlaylists.has(parseInt(selectedPlaylist))) {
@@ -125,12 +102,6 @@ const DetailsSong = ({ isAuthenticated, currentUser }) => {
                         Options
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                        {liked ? (
-                            <Dropdown.Item onClick={handleUnlike}>Dislike</Dropdown.Item>
-                        ) : (
-                            <Dropdown.Item onClick={handleLike}>Like</Dropdown.Item>
-                        )}
-
                         <Dropdown.Divider />
 
                         <Dropdown.Item onClick={() => setShowModal(true)}>Add to Playlist</Dropdown.Item>
