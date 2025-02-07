@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* index.css or App.css */
+
+
+/* Create a white container with padding for content */
+.container {
+  background-color: #868487;
+  color: black; /* Text color inside the container */
+  padding: 30px;
+  border-radius: 12px;
+  /* Optional: adds rounded corners */
+  
+}
+.container2 {
+  background-color: black;
+  color: white; /* Text color inside the container */
+  padding: 20px;
+  border-radius: 8px; /* Optional: adds rounded corners */
+}
+.transparent-table {
+  background-color: transparent !important; /* Fully transparent */
+  color: white;
+  border-collapse: collapse;
+}
+
+/* Additional styling for other elements if necessary */
+h1, h2, h3 {
+  color: white; /* Ensure headers are visible on black background */
+}
+
+/* Adjusting the content in the app */
+.container-sm {
+  background-color: #868487;
+  color: black;
+  padding: 30px;
+  border-radius: 12px;
+  min-height: 600px;
+
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
