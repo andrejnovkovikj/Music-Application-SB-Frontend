@@ -6,5 +6,8 @@ This is because of the limitations of a free render deployment.
 If the backend URL is accessed, or the login button on the Navigation bar is pressed, the backend service will start.
 Note: the loading of the backend might take some time, due to the limitations of the free render deployment.
 
+username: a 
+password: 1
+
 https://music-application-sb.onrender.com (Backend)
 https://music-application-sb-frontend.onrender.com (Frontend)
